@@ -19,6 +19,8 @@ public class Primes {
         System.out.println("There are " + primeCount + " primes between 2 and " + n + " (" + (int) ((primeCount / (double) n) * 100) + "% are primes)");
     }
 
+    /** Given a boolean array and a starting index, finds the next index where the value is true.
+     */
     public static int findNextTrue(boolean[] arr, int index) {
         for (int i = index + 1; i < arr.length; i++) {
             if (arr[i] == true) {
@@ -28,6 +30,8 @@ public class Primes {
         return -1;
     }
 
+    /** Simply prints all the indexes in a given boolean array where the value is true.
+     */
     public static void printlnAllTrues(boolean[] arr) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i]) {
@@ -36,6 +40,8 @@ public class Primes {
         }
     }
 
+    /** Counts the amount of true indexes in a given boolean array.
+     */
     public static int countAllTrues(boolean[] arr) {
         int count = 0;
         for (int i = 0; i < arr.length; i++) {
