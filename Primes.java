@@ -8,9 +8,8 @@ public class Primes {
             primeChecker[i] = true;
         }
         while (p <= Math.sqrt(n)) {
-            for (int i = 2; i <= primeChecker.length / p; i++) {
+            for (int i = 2; i <= n / p; i++) {
                 primeChecker[p*i] = false;
-                System.out.println(p + " " + i + " " + p*i);
             }
             p = findNextTrue(primeChecker, p);
         }
