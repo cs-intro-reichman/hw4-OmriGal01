@@ -35,16 +35,13 @@ public class MyString {
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
         if (str1.length() == 0) {
-            System.out.println("flag1");
             return false;
         }
         if (str2.length() == 0) {
-            System.out.println("flag2");
             return true;
         }
         int firstIteration = str1.indexOf(str2.charAt(0));
         if (firstIteration == -1) {
-            System.out.println("flag3");
             return false;
         }
         for (int i = 0; i < str2.length(); i++) {
