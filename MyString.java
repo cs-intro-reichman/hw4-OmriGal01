@@ -34,6 +34,10 @@ public class MyString {
         if (str2.length() > str1.length()) {
             return false;
         }
+        if (str2.length() == 0) {
+            return true;
+        }
+
         str1 = lowerCase(str1);
         str2 = lowerCase(str2);
         char firstOfStr2 = str2.charAt(0);
