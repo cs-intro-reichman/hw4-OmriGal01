@@ -38,8 +38,6 @@ public class MyString {
             return true;
         }
 
-        str1 = lowerCase(str1);
-        str2 = lowerCase(str2);
         char fStr2 = str2.charAt(0);
         int indexFirstCh = str1.indexOf(fStr2);
         str1 = str1.substring(Math.max(indexFirstCh, 0), str1.length());
