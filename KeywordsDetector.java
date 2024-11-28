@@ -94,6 +94,7 @@ public class KeywordsDetector {
 
         String stringArray[] = new String[spacesCount + 1];
 
+        //Process the sentence into a String array.
         for (int i = 0; i < spacesCount + 1; i++) {
             spaceIndex = preProcess.indexOf(' ');
             stringArray[i] = preProcess.substring(0, (spaceIndex != -1) ? spaceIndex : preProcess.length());
