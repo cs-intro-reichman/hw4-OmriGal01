@@ -40,42 +40,23 @@ public class MyString {
 
         str1 = lowerCase(str1);
         str2 = lowerCase(str2);
-        char firstOfStr2 = str2.charAt(0);
-        int indexOfFirst = str1.indexOf(firstOfStr2);
-
-        while (indexOfFirst != -1) {
-            str1 = str1.substring(indexOfFirst, str1.length());
-            if (stringBeginningsAreEqual(str1, str2)) {
+        char fStr2 = str2.charAt(0);
+        int indexFirstCh = str1.indexOf(fStr2);
+        str1 = str1.substring(Math.max(indexFirstCh, 0), str1.length());
+        //System.out.println(str1);
+        while (str1.length() >= str2.length() && indexFirstCh != -1) {
+            boolean check = true;
+            for (int i = 0; i < str2.length() && check; i++) {
+                if (str1.charAt(i) != str2.charAt(i))
+                check = false;
+            }
+            if (check) {
                 return true;
             }
-            if (str1.length() <= 1) {
-                return false;
-            }
             str1 = str1.substring(1, str1.length());
-            indexOfFirst = str1.indexOf(firstOfStr2);
+            indexFirstCh = str1.indexOf(fStr2);
+            str1 = str1.substring(Math.max(indexFirstCh, 0), str1.length());
         }
-
-        return false;        
-    }
-
-    /*Checks if str1 == str2 + x, where x is another String. */
-    public static boolean stringBeginningsAreEqual(String str1, String str2) {
-        if (str2.length() > str1.length()) {
-            return false;
-        }
-        char chStr1;
-        char chStr2;
-        for (int i = 0; i < str2.length(); i++) {
-            chStr1 = convertCharToLowerCase(str1.charAt(i));
-            chStr2 = convertCharToLowerCase(str2.charAt(i));
-            if (chStr1 != chStr2) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public static char convertCharToLowerCase(char ch) {
-        return (ch >= 65 && ch <= 90) ? (char) (ch + 32) : ch;
+        return false;
     }
 }
